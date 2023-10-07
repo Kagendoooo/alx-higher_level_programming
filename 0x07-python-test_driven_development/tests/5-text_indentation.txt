@@ -1,0 +1,36 @@
+ >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+#1: "." as a seperator
+>>> text_indentation("Hola. Earth")
+Hola.
+<BLANKLINE>
+Earth
+
+#2: "?" seperator
+>>> text_indentation("Hello? How are you")
+Hello?
+<BLANKLINE>
+How are you
+
+#3: ":" seperator
+>>> text_indentation("This is a cow: whoops it's not")
+This is a cow:
+<BLANKLINE>
+whoops it's not
+
+#4: empty string
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+#5: no separators
+>>> text_indentation("This is my car")
+This is my car
+
+#6: multiple separators
+>>> text_indentation("Have we met? I am Daisy. Pleasure")
+Have we met?
+<BLANKLINE>
+I am Daisy.
+<BLANKLINE>
+Pleasure

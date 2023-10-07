@@ -1,10 +1,10 @@
 >>> print_square = __import__('4-print_square').print_square
 
-Case 1: print 1
+#1: print 1
 >>> print_square(1)
 #
 
-case 2: print 9
+#2: print 9
 >>> print_square(9)
 #########
 #########
@@ -16,17 +16,17 @@ case 2: print 9
 #########
 #########
 
-case 4: a string
+#3: a string
 >>> print_square("a string")
 Traceback (most recent call last):
 TypeError: size must be an integer
 
-case 5: size is less than 0
+#4: size is less than 0
 >>> print_square(-3)
 Traceback (most recent call last):
 ValueError: size must be >= 0
 
-case 6: no argument provided
+#5: no argument provided
 >>> print_square()
 Traceback (most recent call last):
 TypeError: print_square() missing 1 required positional argument: 'size'
