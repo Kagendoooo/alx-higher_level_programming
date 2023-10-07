@@ -1,0 +1,112 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+# Test  1: Valid multiplication of 2x2 matrices
+>>> m_a = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> m_b = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> print(matrix_mul(m_a, m_b))
+[[7, 10], [15, 22]]
+
+# Test  2: Valid multiplication of 1x2 and 2x2 matrices
+>>> m_a = [
+...     [1, 2]
+... ]
+>>> m_b = [
+...     [3, 4],
+...     [5, 6]
+... ]
+>>> print(matrix_mul(m_a, m_b))
+[[13, 16]]
+
+# Test  3: Invalid input - m_a is not a list
+>>> m_a = 123
+>>> m_b = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+# Test  4: Invalid input - m_b is not a list
+>>> m_a = [
+...     [1, 2],
+...     [7, 4]
+... ]
+>>> m_b = 56
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+# Test  5: Invalid input - m_a is an empty list
+>>> m_a = []
+>>> m_b = [
+...     [1, 3],
+...     [3, 4]
+... ]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+# Test  6: Invalid input - m_b is an empty list
+>>> m_a = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> m_b = []
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+    ...
+ValueError: m_b can't be empty
+
+# Test  7: Invalid input - m_a is not a list of lists
+>>> m_a = [1, 2, 3]
+>>> m_b = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists
+
+# Test 8: Invalid input - m_b is not a list of lists
+>>> m_a = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> m_b = [5, 6, 7]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+TypeError: m_b must be a list of lists
+
+# Test 9: Invalid input - Element in m_a is not an integer or float
+>>> m_a = [
+...     [1, 2],
+...     [3, 'x']
+... ]
+>>> m_b = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+# Test Case 11: Invalid input - Matrices cannot be multiplied
+>>> m_a = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> m_b = [
+...     [1, 2, 3],
+...     [4, 5, 6],
+...     [4, 5]
+... ]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+TypeError: each row of m_b must should be of the same size
