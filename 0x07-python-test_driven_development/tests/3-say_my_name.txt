@@ -1,0 +1,25 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Test Case 2: Valid test case with both first name and last name
+>>> say_my_name("Faith", "Michaels")
+My name is Faith Michaels
+
+# Test Case 3: Invalid test case - first_name is None
+>>> say_my_name(None, "Lamar")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+# Test Case 5: Invalid test case - first_name is an integer
+>>> say_my_name(6, "Noah")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+# Test Case 6: Invalid test case - last_name is a list
+>>> say_my_name("Faith", ["Loves", "and", "Dogs"])
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+# Test Case 7: Invalid test case - first_name is a dictionary and last_name is a float
+>>> say_my_name({"Kevin": 13, "Peter": 25}, 6.7)
+Traceback (most recent call last):
+TypeError: first_name must be a string
