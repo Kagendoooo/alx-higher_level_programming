@@ -1,14 +1,21 @@
 #!/usr/bin/python3
 
-"""Base Class"""
+"""Defines a base model class."""
 
 
 class Base:
-    """a class base"""
+    """rep base model
+    Attributes:
+    __nb_objects: number of instantiated Bases
+    """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """constuctor"""
+        """Initialize a new Base.
+        Args:
+            id: identity of the new base
+        """
         if id is not None:
             self.id = id
         else:
