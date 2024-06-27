@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """
-Deletes all states objects with a name containing the letter a
-From the database hbtn_0e_6_usa
+Delete states with a
 """
-
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -14,9 +12,9 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
-    session = Session()
+    ses = Session()
 
-    for state in session.query(State):
+    for state in ses.query(State):
         if "a" in state.name:
-            session.delete(state)
-    session.commit()
+            ses.delete(state)
+    ses.commit()
