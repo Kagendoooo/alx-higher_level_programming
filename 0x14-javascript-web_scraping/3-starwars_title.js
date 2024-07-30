@@ -1,14 +1,17 @@
 #!/usr/bin/node
 // Star wars movie title
+
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/';
+const episodeNum = process.argv[2];
+const API_URL = 'https://swapi-api.hbtn.io/api/films/';
 
-const movieId = process.argv[2];
-
-request(`${url}/${movieId}/`, (error, response, body) => {
-  if (error) {
-    console.log(error);
+request(API_URL + episodeNum, function (err, response, body) {
+  if (err) {
+    console.log(err);
+  } else if (response.statusCode === 200) {
+    const responseJSON = JSON.parse(body);
+    console.log(responseJSON.title);
+  } else {
+    console.log('Error code: ' + response.statusCode);
   }
-  const json = JSON.parse(body);
-  console.log(json.title);
 });
